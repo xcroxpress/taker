@@ -1,7 +1,12 @@
 import telegram
 from datetime import datetime
 import requests
-from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver import Remote
+
+driver = Remote(
+    command_executor='http://localhost:4444/wd/hub',
+    options=ChromeOptions()
+)
 
 class SignIn:
     def __init__(self):
